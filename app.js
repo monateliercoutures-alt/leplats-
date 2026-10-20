@@ -47,7 +47,7 @@ component('site-header', () => `
       <input id="searchInput" type="search" placeholder="Une envie, un restaurant…" aria-label="Rechercher une cuisine ou un restaurant" />
       <button aria-label="Rechercher" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></button>
     </form>
-    <a class="brand" href="#accueil" aria-label="TonMenu, accueil"><img class="brand-logo-header" src="${asset('tonmenu-mark.png')}" alt="TonMenu" width="27" height="27" /></a>
+    <a class="brand" href="#accueil" aria-label="TonMenu, accueil"><img class="brand-logo-header" src="${asset('logo-header.png')}" alt="TonMenu" width="157" height="30" /></a>
     <div class="header-actions">
       <button class="address-button" data-modal="addressModal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"></path><circle cx="12" cy="10" r="2.2"></circle></svg><span><small>ADRESSE DE LIVRAISON</small><b id="addressLabel">Choisir une adresse</b></span></button>
       <button class="icon-button user-icon" data-modal="accountModal" aria-label="Mon compte"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4.8 21a7.2 7.2 0 0 1 14.4 0"></path></svg></button>
@@ -159,7 +159,7 @@ component('photo-strip', () => `
 
 component('site-footer', () => `
   <footer class="site-footer" id="aide"><div class="wrap footer-grid">
-    <div class="footer-brand"><a class="footer-logo" href="#accueil" aria-label="TonMenu, accueil"><img class="brand-logo-footer" src="${asset('tonmenu-mark.png')}" alt="TonMenu" width="27" height="27" loading="lazy" /></a>
+    <div class="footer-brand"><a class="footer-logo" href="#accueil" aria-label="TonMenu, accueil"><img class="brand-logo-footer" src="${asset('logo-footer.png')}" alt="TonMenu" width="190" height="38" loading="lazy" /></a>
       <p>Les bonnes adresses d’ici.<br />Les saveurs qu’on aime.<br />Le quartier, en quelques clics.</p><p class="location"><span aria-hidden="true">⌖</span> Yopougon · Abidjan · Côte d’Ivoire</p>
     </div>
     <div><h3>À la carte</h3><a href="#cuisines">Maquis</a><a href="#cuisines">Grillades / Rôtisserie</a><a href="#cuisines">Attiéké &amp; Aloco</a><a href="#cuisines">Cuisine africaine (autre)</a></div>
