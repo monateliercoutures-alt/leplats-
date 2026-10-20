@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ef3e32" />
+  <meta name="description" content="TonMenu — les bonnes adresses d'ici, les saveurs qu'on aime. Découvrez les restaurants de Yopougon et d'Abidjan." />
+  <title>TonMenu — Le vrai goût de chez nous</title>
+  <link rel="stylesheet" href="/styles.css?v=5" />
+</head>
+<body>
+  <div class="topline">
+    <div class="topline-inner"><span>Votre repas préféré, en quelques clics.</span><span>100 % restauration locale · Abidjan</span><a href="#aide">Besoin d'aide ? <span aria-hidden="true">↗</span></a></div>
+  </div>
+  <header class="site-header">
+    <div class="header-main wrap">
+      <form class="searchbox" id="searchForm" role="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 4.2 4.2"></path></svg>
+        <input id="searchInput" type="search" placeholder="Une envie, un restaurant..." aria-label="Rechercher un plat ou un restaurant" />
+        <button aria-label="Rechercher" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></button>
+      </form>
+      <a class="brand" href="#accueil" aria-label="TonMenu, accueil"><img class="brand-logo-header" src="/images/logo-header.png" alt="TonMenu" /></a>
+      <div class="header-actions">
+        <button class="address-button" data-modal="addressModal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"></path><circle cx="12" cy="10" r="2.2"></circle></svg><span><small>ADRESSE DE LIVRAISON</small><b id="addressLabel">Choisir une adresse</b></span></button>
+        <button class="icon-button user-icon" data-modal="accountModal" aria-label="Mon compte"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4.8 21a7.2 7.2 0 0 1 14.4 0"></path></svg></button>
+        <button class="icon-button cart-icon" data-modal="cartModal" aria-label="Mon panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8Z"></path><path d="M9 9V6a3 3 0 0 1 6 0v3"></path></svg><span class="cart-count">0</span></button>
+        <button class="mobile-menu" id="mobileMenu" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="main-nav" id="mainNav" aria-label="Navigation principale"><div class="nav-inner"><a href="#accueil" class="active">Accueil</a><a href="#restaurants">Restaurants</a><a href="#cuisines">Nos cuisines</a><a href="#esprit">L'esprit TonMenu</a><a href="#comment">Comment ça marche</a><a href="#partenaires">Espace partenaire <span>↗</span></a></div></nav>
+
+  <main>
+    <section class="hero" id="accueil" aria-label="Le vrai goût de chez nous">
+      <img class="hero-exact-image" src="/images/hero-exact.png?v=2" alt="Chaud. Généreux. Tout simplement bon. Le vrai goût de chez nous. De l’alloco doré à la bonne braise du quartier, vos envies ont trouvé leur adresse. Les cuisines d’Abidjan, à votre porte." />
+      <a class="hero-cta-overlay" href="#restaurants" aria-label="Découvrir les restaurants"></a>
+      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-inner wrap">
+        <div class="hero-copy">
+          <p class="hero-kicker">Chaud. Généreux. Tout simplement bon.</p>
+          <h1>Le vrai goût<br />de chez nous.</h1>
+          <p class="hero-intro">De l’alloco doré à la bonne braise du quartier,<br class="desktop-only" /> vos envies ont trouvé leur adresse.</p>
+          <p class="hero-delivery">Les cuisines d’Abidjan. <strong>À votre porte.</strong></p>
+          <a class="button button-red" href="#restaurants">Découvrir les restaurants <span class="arrow">→</span></a>
+        </div>
+        <div class="hero-foot"><span>100 % restauration locale</span></div>
+      </div>
+    </section>
+
+    <section class="categories section" id="cuisines">
+      <div class="wrap">
+        <p class="eyebrow center">CHAQUE ENVIE A SON MENU</p>
+        <h2 class="section-title">Qu’est-ce qui vous fait envie ?</h2>
+        <div class="category-tools"><button class="button button-red compact" data-filter="all"><span class="fork-icon">♜</span> Toutes les cuisines <span class="pill-count">0</span></button><span class="muted small-text">0 catégories de restauration</span></div>
+        <div class="category-grid">
+          <a href="#saveurs" class="category-card category-yellow"><div class="category-copy"><small>POUR LES GRANDES FAIMS</small><h3>Un burger.<br />Et du bonheur.</h3><span class="text-link">Explorer ↗</span></div><img src="/images/burger.jpg" alt="Burger généreux" /></a>
+          <a href="#saveurs" class="category-card category-charcoal"><div class="category-copy"><small>LE GOÛT DE CHEZ NOUS</small><h3>Attiéké &amp; poisson.<br />Tout simplement bon.</h3><span class="text-link">Explorer ↗</span></div><img src="/images/attieke.jpg" alt="Attiéké et poisson" /></a>
+          <a href="#saveurs" class="category-card category-red"><div class="category-copy"><small>LES CLASSIQUES QU’ON AIME</small><h3>Nos plats en sauce.<br />Du goût à partager.</h3><span class="text-link">Explorer ↗</span></div><img src="/images/plats-sauce.jpg" alt="Plat en sauce" /></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="discover section" id="restaurants">
+      <div class="wrap">
+        <p class="eyebrow center">LES BONNES ADRESSES DU QUARTIER</p>
+        <h2 class="section-title">Vos prochaines découvertes</h2>
+        <p class="section-subtitle">De vraies cuisines, tout près de chez vous.</p>
+        <div class="discover-toolbar"><b>Tous les restaurants <span class="count-muted">0</span></b><label class="sort-control"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 4v4m8 2v4m-8 2v4"></path></svg><select aria-label="Trier les restaurants"><option>Recommandés</option><option>Les mieux notés</option><option>Les plus proches</option></select></label></div>
+        <div class="empty-state" id="emptyState"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 9 27 23M12 7c6-1 12 2 15 7M9 13c4-1 8 1 10 4m-13 0 2-1c2-.5 4 .5 5.2 2.2M18 22l3 2m-8-3 1.4 1m7-15 3-3m-1 8 4-1"></path></svg><h3>Le catalogue n’a pas pu être chargé.</h3><p id="loadMessage">Réponse du serveur indisponible. Veuillez réessayer.</p><button id="retryButton" class="button button-red">Réessayer</button></div>
+      </div>
+    </section>
+
+    <section class="flavours section" id="saveurs">
+      <div class="wrap">
+        <p class="eyebrow center">LA GOURMANDISE PARLE TOUTES LES LANGUES</p>
+        <h2 class="section-title">Les saveurs qu’on aime</h2>
+        <p class="section-subtitle">Des inspirations à retrouver selon les menus de nos partenaires.</p>
+        <div class="flavour-grid">
+          <a class="flavour-card" href="#restaurants"><div class="food-photo"><img src="/images/plats-sauce.jpg" alt="Plat en sauce" /></div><small>Cuisine locale</small><h3>Plats en sauce</h3><span>Explorer les restaurants <b>→</b></span></a>
+          <a class="flavour-card" href="#restaurants"><div class="food-photo"><img src="/images/poisson.jpg" alt="Poisson et crevettes" /></div><small>Cuisine locale</small><h3>Poisson &amp; crevettes</h3><span>Explorer les restaurants <b>→</b></span></a>
+          <a class="flavour-card" href="#restaurants"><div class="food-photo"><img src="/images/attieke-poisson.jpg" alt="Attiéké et poisson braisé" /></div><small>Cuisine locale</small><h3>Attiéké &amp; poisson</h3><span>Explorer les restaurants <b>→</b></span></a>
+          <a class="flavour-card" href="#restaurants"><div class="food-photo"><img src="/images/riz-poisson.jpg" alt="Riz et poisson" /></div><small>Cuisine locale</small><h3>Riz &amp; poisson</h3><span>Explorer les restaurants <b>→</b></span></a>
+          <a class="flavour-card" href="#restaurants"><div class="food-photo"><img src="/images/burger-card.jpg" alt="Burger généreux" /></div><small>Cuisine locale</small><h3>Burgers généreux</h3><span>Explorer les restaurants <b>→</b></span></a>
+          <a class="flavour-card" href="#restaurants"><div class="food-photo"><img src="/images/pizza.jpg" alt="Pizza gourmande" /></div><small>Cuisine locale</small><h3>Pizzas gourmandes</h3><span>Explorer les restaurants <b>→</b></span></a>
+          <a class="flavour-card" href="#restaurants"><div class="food-photo"><img src="/images/poulet.jpg" alt="Poulet croustillant" /></div><small>Cuisine locale</small><h3>Poulet croustillant</h3><span>Explorer les restaurants <b>→</b></span></a>
+          <a class="flavour-card" href="#restaurants"><div class="food-photo"><img src="/images/croque.jpg" alt="Croque doré" /></div><small>Cuisine locale</small><h3>Croques dorés</h3><span>Explorer les restaurants <b>→</b></span></a>
+        </div>
+        <p class="photo-note">Photos d’inspiration. Les plats disponibles sont ceux des menus de nos partenaires. Les marques visibles ne constituent pas une affiliation.</p>
+      </div>
+    </section>
+
+    <div class="promise-bar"><div class="wrap"><span>DU GOÛT, PAS DE COMPLICATIONS</span><i>✳</i><span>UN QUARTIER À LA FOIS</span><i>✳</i><span>LES VRAIES SAVEURS D’ABIDJAN</span><i>✳</i></div></div>
+
+    <section class="story section" id="esprit">
+      <div class="wrap story-layout">
+        <div class="story-art"><img class="story-main" src="/images/story-meal.jpg" alt="Poisson et crevettes en sauce" /><div class="story-burger"><img src="/images/burger-card.jpg" alt="Burger maison" /></div></div>
+        <div class="story-copy"><p class="eyebrow">BIENVENUE CHEZ TONMENU</p><h2>Les bonnes cuisines<br />font les bons quartiers.</h2><p>Une braise qui crépite, une recette qu’on se transmet, une adresse qu’on recommande aux amis. C’est cette cuisine-là qu’on veut rapprocher de vous.</p><p>TonMenu commence à Yopougon, avec une idée simple : donner aux restaurants d’ici une place dans votre quotidien. Rien que de la restauration. Et beaucoup de gourmandise.</p><a class="button button-red" href="#restaurants">Trouver ma prochaine adresse <span class="arrow">→</span></a></div>
+      </div>
+    </section>
+
+    <section class="how section" id="comment"><div class="wrap how-grid"><article><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 14h22v14H5zM3 14l3-8h20l3 8M10 28v-8h12v8M10 11h.1M16 11h.1M22 11h.1"></path></svg><h3>Une cuisine qui vous plaît</h3><p>Découvrez les restaurants<br />et leurs spécialités.</p></article><article><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 14h22l-2 14H7L5 14ZM3 14h26M12 9l8-5m-7 5 8-5"></path></svg><h3>Un menu à votre goût</h3><p>Choisissez vos plats<br />et composez votre panier.</p></article><article><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="6" width="22" height="22" rx="2"></rect><path d="M5 11h22M19 19h4"></path></svg><h3>Vos habitudes de paiement</h3><p>Choisissez votre opérateur.<br />Mobile Money simulé pour le moment.</p></article><article><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="8" cy="23" r="4"></circle><circle cx="25" cy="23" r="4"></circle><path d="m8 23 7-12 5 12H8Zm7-12h7m-2 0 5-5m-11 5 5 12"></path></svg><h3>Le quartier à votre porte</h3><p>Consultez le statut de préparation<br />depuis votre commande.</p></article></div></section>
+
+    <section class="app-promo"><div class="wrap promo-layout"><div><p class="eyebrow">L’APPÉTIT N’ATTEND PAS.</p><h2>Votre quartier.<br />Votre menu.<br /><strong>Dans votre poche.</strong></h2><p>Gardez TonMenu sur votre écran d’accueil.<br />Pas de téléchargement dans un store, juste un clic.</p><button class="button button-dark" id="installButton"><span>⇩</span> Installer TonMenu</button><small>PWA · Android, iPhone et ordinateur</small></div><img src="/images/phone-food.jpg" alt="Aperçu de l’application TonMenu" class="promo-art" /><span class="round-badge">TOUJOURS<br /><strong>à portée<br />de main.</strong></span></div></section>
+
+    <section class="partner section" id="partenaires"><div class="wrap partner-layout"><div><p class="eyebrow">VOTRE TALENT MÉRITE D’ÊTRE DÉCOUVERT</p><h2>Vous cuisinez. Le quartier se régale.</h2><p>Un menu en ligne, des commandes et votre propre QR code.<br />Rejoignez TonMenu, simplement.</p></div><a href="mailto:partenaires@tonmenu.ci" class="button button-red">Devenir partenaire <span>↗</span></a></div></section>
+    <div class="photo-ribbon" aria-hidden="true"><img src="/images/plats-sauce.jpg" alt=""/><img src="/images/poisson.jpg" alt=""/><img src="/images/attieke-poisson.jpg" alt=""/><img src="/images/riz-poisson.jpg" alt=""/><img src="/images/burger-card.jpg" alt=""/><img src="/images/pizza.jpg" alt=""/><img src="/images/poulet.jpg" alt=""/><img src="/images/croque.jpg" alt=""/></div>
+  </main>
+  <footer class="site-footer" id="aide"><div class="wrap footer-grid"><div class="footer-brand"><a class="brand" href="#accueil" aria-label="TonMenu"><img class="brand-logo-footer" src="/images/logo-footer.png" alt="TonMenu" /></a><p>Les bonnes adresses d’ici.<br />Les saveurs qu’on aime.<br />Le quartier, en quelques clics.</p><p class="location"><span>⌖</span> Yopougon · Abidjan · Côte d’Ivoire</p></div><div><h3>À la carte</h3><a href="#restaurants">Restaurants</a><a href="#cuisines">Nos cuisines</a><a href="#esprit">Notre histoire</a></div><div><h3>À vos côtés</h3><a href="#restaurants">Mes commandes</a><a href="#restaurants">Mes bonnes adresses</a><a href="#aide">Aide &amp; questions</a><a href="#partenaires">Espace partenaire</a></div><div><h3>Un petit creux ?</h3><p>Votre prochain bon repas<br />n’est jamais bien loin.</p><a href="#accueil" class="button button-red footer-button">Installer l’application <span>⇩</span></a><small>Sans compte pour commander.<br />Paiements simulés dans cette version.</small></div></div><div class="wrap footer-bottom"><span>© 2026 TonMenu. Votre repas préféré, en quelques clics.</span><span>Orange Money　·　MTN MoMo　·　Moov Money</span></div></footer>
+
+  <dialog class="modal" id="addressModal"><form method="dialog" class="modal-card" id="addressForm"><button class="modal-close" aria-label="Fermer">×</button><span class="modal-pin">⌖</span><p class="eyebrow">ON LIVRE DANS VOTRE QUARTIER</p><h2>Où souhaitez-vous être livré ?</h2><label for="addressInput">Votre adresse à Abidjan</label><input id="addressInput" placeholder="Ex. Yopougon, Niangon..." required /><button class="button button-red" value="save">Confirmer mon adresse</button></form></dialog>
+  <dialog class="modal" id="accountModal"><form method="dialog" class="modal-card"><button class="modal-close" aria-label="Fermer">×</button><span class="modal-pin">♙</span><p class="eyebrow">VOTRE COMPTE TONMENU</p><h2>Heureux de vous retrouver.</h2><p class="modal-copy">Connectez-vous bientôt pour suivre vos commandes et retrouver vos adresses favorites.</p><button class="button button-red" value="close">Continuer la découverte</button></form></dialog>
+  <dialog class="modal" id="cartModal"><form method="dialog" class="modal-card"><button class="modal-close" aria-label="Fermer">×</button><span class="modal-pin">♧</span><p class="eyebrow">VOTRE PANIER</p><h2>Votre panier est encore vide.</h2><p class="modal-copy">Les bons petits plats vous attendent. Choisissez une cuisine pour commencer.</p><button class="button button-red" value="close">Découvrir les cuisines</button></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
