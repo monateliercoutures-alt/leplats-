@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#EC3D2E" />
+  <meta name="description" content="Les meilleurs restaurants de Yopougon, livrés chez vous. Commandez local avec TonMenu." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TonMenu — Le goût du quartier." />
+  <meta property="og:description" content="Les meilleurs restaurants de Yopougon, livrés chez vous. Commandez local avec TonMenu." />
+  <meta property="og:image" content="/images/hero-exact.webp" />
+  <meta property="og:image:alt" content="Le vrai goût de chez nous : poulet braisé, riz et alloco avec TonMenu." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TonMenu — Le goût du quartier." />
+  <meta name="twitter:description" content="Les meilleurs restaurants de Yopougon, livrés chez vous. Commandez local avec TonMenu." />
+  <meta name="twitter:image" content="/images/hero-exact.webp" />
+  <title>TonMenu — Accueil</title>
+  <link rel="icon" href="/images/tonmenu-icon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/accueil/mobile.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-topline"><a href="/accueil" aria-label="TonMenu, accueil"><img src="/images/logo-header.png" alt="TonMenu" width="170" height="34" /></a><button class="app-cart" aria-label="Panier, 0 article">♧<span>0</span></button></div>
+    <button class="app-address" id="mobileAddress"><span class="pin">⌖</span><span><small>ADRESSE DE LIVRAISON</small><strong id="mobileAddressLabel">Choisir une adresse</strong></span><span class="chevron">⌄</span></button>
+    <form class="app-search" id="mobileSearch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 4.2 4.2"></path></svg><input id="mobileSearchInput" type="search" placeholder="Une envie, un restaurant…" aria-label="Rechercher" /><button aria-label="Rechercher">→</button></form>
+  </header>
+  <main class="app-main">
+    <section class="app-welcome"><div><p>CHAUD. GÉNÉREUX. TOUT SIMPLEMENT BON.</p><h1>Le vrai goût<br />de chez nous.</h1><span>Les cuisines d’Abidjan, à votre porte.</span></div><img src="/images/grillades.webp" alt="Poulet braisé, riz et alloco" width="160" height="160" /></section>
+    <section class="app-section" id="mobile-cuisines"><div class="app-section-heading"><div><small>CHAQUE ENVIE A SON MENU</small><h2>Qu’est-ce qui vous fait envie ?</h2></div><a href="#mobile-cuisines">Tout voir</a></div>
+      <div class="app-cuisine-grid" id="mobileCategoryGrid">
+        <button data-mobile-category="Maquis"><img src="/images/plats-sauce.webp" alt="" loading="lazy"/><span>Maquis</span></button>
+        <button data-mobile-category="Grillades"><img src="/images/grillades.webp" alt="" loading="lazy"/><span>Grillades</span></button>
+        <button data-mobile-category="Attiéké & Aloco"><img src="/images/attieke-poisson.webp" alt="" loading="lazy"/><span>Attiéké & Aloco</span></button>
+        <button data-mobile-category="Cuisine africaine"><img src="/images/cuisine-africaine.webp" alt="" loading="lazy"/><span>Cuisine africaine</span></button>
+        <button data-mobile-category="Cuisine libanaise"><img src="/images/cuisine-libanaise.webp" alt="" loading="lazy"/><span>Libanais</span></button>
+        <button data-mobile-category="Fast-food"><img src="/images/burger-card.webp" alt="" loading="lazy"/><span>Fast-food</span></button>
+        <button data-mobile-category="Pizza / Italien"><img src="/images/pizza.webp" alt="" loading="lazy"/><span>Pizza</span></button>
+        <button data-mobile-category="Fruits de mer"><img src="/images/poisson.webp" alt="" loading="lazy"/><span>Fruits de mer</span></button>
+        <button data-mobile-category="Cuisine européenne"><img src="/images/croque.webp" alt="" loading="lazy"/><span>Européen</span></button>
+        <button data-mobile-category="Pâtisserie / Café"><img src="/images/patisserie.webp" alt="" loading="lazy"/><span>Café &amp; douceurs</span></button>
+      </div>
+    </section>
+    <section class="app-section restaurants-mobile" id="mobile-restaurants"><div class="app-section-heading"><div><small>LES BONNES ADRESSES DU QUARTIER</small><h2>Vos prochaines découvertes</h2></div><span class="result-count">0</span></div>
+      <p class="app-subtitle">De vraies cuisines, tout près de chez vous.</p>
+      <article class="app-empty"><span class="plate-icon" aria-hidden="true">⌁</span><small>LES PREMIERS PARTENAIRES ARRIVENT</small><h3>Le quartier se met à table.</h3><p id="mobileEmptyText">Nous préparons les premières bonnes adresses de Yopougon. Vous avez un restaurant ? Faites découvrir votre cuisine.</p><a href="mailto:partenaires@tonmenu.ci">Inscrire mon restaurant <span>↗</span></a></article>
+    </section>
+    <section class="app-section app-flavors" id="mobile-saveurs"><div class="app-section-heading"><div><small>LA GOURMANDISE PARLE TOUTES LES LANGUES</small><h2>Les saveurs qu’on aime</h2></div></div><div class="mobile-flavor-list">
+      <a href="#mobile-restaurants"><img src="/images/plats-sauce.webp" alt="Plat en sauce" loading="lazy"/><span>Plats en sauce</span></a>
+      <a href="#mobile-restaurants"><img src="/images/poisson.webp" alt="Poisson et crevettes" loading="lazy"/><span>Poisson &amp; crevettes</span></a>
+      <a href="#mobile-restaurants"><img src="/images/burger-card.webp" alt="Burger" loading="lazy"/><span>Burgers généreux</span></a>
+      <a href="#mobile-restaurants"><img src="/images/poulet-sans-marque.webp" alt="Poulet croustillant" loading="lazy"/><span>Poulet croustillant</span></a>
+    </div></section>
+  </main>
+  <nav class="bottom-nav" aria-label="Navigation mobile"><a class="active" href="/accueil"><span>⌂</span>Accueil</a><a href="#mobile-cuisines"><span>◉</span>Cuisines</a><a href="#mobile-restaurants"><span>▣</span>Restaurants</a><a href="#mobile-saveurs"><span>♡</span>Favoris</a></nav>
+  <script src="/accueil/mobile.js" defer></script>
+</body>
+</html>
