@@ -4,7 +4,7 @@ const SHELL = [
   '/accueil/mobile.css',
   '/accueil/mobile.js',
   '/site.webmanifest',
-  '/images/logo-header.png',
+  '/images/tonmenu-mark.png',
   '/images/tonmenu-icon-192.png',
   '/images/tonmenu-icon-512.png',
   '/images/plats-sauce.webp',
