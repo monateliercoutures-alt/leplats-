@@ -8,3 +8,6 @@
 .hero.hero-composite{height:auto;min-height:0;background:#171b1c;isolation:auto;line-height:0}
 .hero-composite-image{display:block;width:100%;height:auto;object-fit:contain}
 .hero-composite-link{position:absolute;z-index:4;left:18%;top:74.5%;width:11.5%;height:8%;display:block;border-radius:999px}
+.category-grid{display:flex;gap:15px;overflow-x:auto;overflow-y:hidden;padding:0 0 12px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--red) #eee9e1;overscroll-behavior-x:contain}
+.category-tile{flex:0 0 clamp(195px,18vw,225px);scroll-snap-align:start}
+@media(max-width:1120px){.category-grid{gap:15px}.category-tile{flex-basis:210px;min-height:325px}}

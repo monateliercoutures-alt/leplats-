@@ -72,7 +72,7 @@ component('cuisine-grid', () => `
   <section class="categories section" id="cuisines"><div class="wrap">
     <p class="eyebrow center">CHAQUE ENVIE A SON MENU</p><h2 class="section-title">Qu’est-ce qui vous fait envie ?</h2>
     <div class="category-tools"><button class="button button-red compact" data-filter="all"><svg class="utensils-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v7m-3-7v4a3 3 0 0 0 6 0V3M6 10v11m9-18v18m0-18c3 2 4 5 4 9h-4"></path></svg> Toutes les cuisines <span class="pill-count">${restaurantRecords.length}</span></button><span class="muted small-text">10 catégories de restauration</span></div>
-    <div class="category-grid" id="categoryGrid">${categories.map((item) => `
+    <div class="category-grid" id="categoryGrid" role="group" aria-label="Catégories de restauration, faites défiler horizontalement">${categories.map((item) => `
       <button class="category-tile" type="button" data-category="${item.slug}" aria-pressed="false">
         <img src="${asset(item.image)}" alt="${item.alt}" width="108" height="108" loading="lazy" />
         <h3>${item.title}</h3><p>${item.description}</p><span class="category-status">${restaurantRecords.filter((restaurant) => restaurant.category === item.slug).length ? `${restaurantRecords.filter((restaurant) => restaurant.category === item.slug).length} restaurants` : 'Bientôt'}</span>

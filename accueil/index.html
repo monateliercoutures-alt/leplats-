@@ -17,7 +17,7 @@
   <title>TonMenu — Accueil</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/images/tonmenu-favicon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="/accueil/mobile.css" />
+  <link rel="stylesheet" href="/accueil/mobile.css?v=2" />
 </head>
 <body>
   <header class="app-header">
@@ -28,7 +28,7 @@
   <main class="app-main">
     <section class="app-welcome"><div><p>CHAUD. GÉNÉREUX. TOUT SIMPLEMENT BON.</p><h1>Le vrai goût<br />de chez nous.</h1><span>Les cuisines d’Abidjan, à votre porte.</span></div><img src="/images/grillades.webp" alt="Poulet braisé, riz et alloco" width="160" height="160" /></section>
     <section class="app-section" id="mobile-cuisines"><div class="app-section-heading"><div><small>CHAQUE ENVIE A SON MENU</small><h2>Qu’est-ce qui vous fait envie ?</h2></div><a href="#mobile-cuisines">Tout voir</a></div>
-      <div class="app-cuisine-grid" id="mobileCategoryGrid">
+      <div class="app-cuisine-grid" id="mobileCategoryGrid" role="group" aria-label="Catégories de cuisine, faites défiler horizontalement">
         <button data-mobile-category="Maquis"><img src="/images/plats-sauce.webp" alt="" loading="lazy"/><span>Maquis</span></button>
         <button data-mobile-category="Grillades"><img src="/images/grillades.webp" alt="" loading="lazy"/><span>Grillades</span></button>
         <button data-mobile-category="Attiéké & Aloco"><img src="/images/attieke-poisson.webp" alt="" loading="lazy"/><span>Attiéké & Aloco</span></button>
