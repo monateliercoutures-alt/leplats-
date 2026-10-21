@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+OUT="pages-dist"
+rm -rf "$OUT"
+mkdir -p "$OUT/accueil" "$OUT/admin" "$OUT/pro" "$OUT/shared"
+cp index.html app.js styles.css site.webmanifest sw.js api-config.js "$OUT/"
+cp -R accueil/. "$OUT/accueil/"
+cp -R images "$OUT/images"
+cp -R shared/. "$OUT/shared/"
+cp admin/index.html admin/app.css admin/app.js "$OUT/admin/"
+cp pro/index.html pro/app.css pro/app.js pro/api-config.js pro/site.webmanifest pro/sw.js pro/courier.html pro/courier.css pro/courier.js "$OUT/pro/"
+cp -R pro/media "$OUT/pro/media"
+cp accueil/index.html "$OUT/404.html"
+touch "$OUT/.nojekyll"
+python3 scripts/build-pages.py "$OUT"
+printf 'TonMenu GitHub Pages build ready in %s (base path /leplats-/)\n' "$OUT"

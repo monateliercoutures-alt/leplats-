@@ -1,17 +1,16 @@
-# Déploiement séparé de TonMenu Pro
+# Déploiement de TonMenu Pro & Courses
 
-TonMenu Pro est autonome et peut être déployé comme un projet Vercel distinct du site client.
+TonMenu Pro est indépendant du Client et du panneau Admin. Pour inclure également la mini-application livreur à la racine du domaine Pro :
 
-## Créer le projet Vercel Pro
+1. Dans Vercel, importer `monateliercoutures-alt/leplats-`.
+2. Choisir **Root Directory** `.` (racine du dépôt).
+3. Choisir **Other** comme framework.
+4. Build Command : `bash scripts/build-pro.sh`.
+5. Output Directory : `pro-dist`.
+6. Vérifier les logs et l’URL `/` (portail restaurant) ainsi que `/courier.html` (livreurs).
 
-1. Dans Vercel, créer un projet et importer `monateliercoutures-alt/leplats-`.
-2. Choisir la branche `arena/7a8970cf-leplats` pour une Preview.
-3. Régler **Root Directory** sur `pro`.
-4. Choisir **Other** comme framework ; ne définir ni commande de build ni dossier de sortie.
-5. Déployer. Vercel attribuera une adresse temporaire `*.vercel.app`.
+Le build copie le portail Pro, les ressources `media/`, le module partagé `shared/finance-*` et l’application livreur. Le lien livreur est aussi inclus dans le Client en `/pro/courier.html` pour la démo. Pour une publication GitHub Pages au même domaine de projet, le workflow racine publie les trois espaces et le coursier ensemble sous `/leplats-/`.
 
-Les chemins HTML, les icônes, les images, le manifeste et le service worker sont relatifs au projet : le même portail marche donc à `/pro/` dans le projet client et à la racine de ce projet séparé. Les images utilisées par Pro sont regroupées dans `media/`.
+## Backend
 
-## Connexion à l’API partagée
-
-Après le déploiement du projet API, définir `window.TONMENU_API_BASE_URL` dans `api-config.js` avec l’adresse publique de cette API. Le navigateur et le backend devront autoriser les origines Vercel Client et Pro.
+`pro/api-config.js` ne définit pas l’URL d’API par défaut. Ne la renseigner qu’après publication de l’API partagée, application des migrations et tests RBAC. En mode démo, les finances restent dans `localStorage` et ne doivent pas être utilisées pour des commandes ou paiements réels. Les origines Client, Pro/Courses et Admin devront être autorisées côté API.

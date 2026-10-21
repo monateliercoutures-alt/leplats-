@@ -166,7 +166,7 @@ component('site-footer', () => `
       <p>Les bonnes adresses d’ici.<br />Les saveurs qu’on aime.<br />Le quartier, en quelques clics.</p><p class="location"><span aria-hidden="true">⌖</span> Yopougon · Abidjan · Côte d’Ivoire</p>
     </div>
     <div><h3>À la carte</h3><a href="#cuisines">Maquis</a><a href="#cuisines">Grillades / Rôtisserie</a><a href="#cuisines">Attiéké &amp; Aloco</a><a href="#cuisines">Cuisine africaine (autre)</a></div>
-    <div><h3>À vos côtés</h3><a href="#restaurants">Mes commandes</a><a href="#restaurants">Mes bonnes adresses</a><a href="#aide">Aide &amp; questions</a><a href="#partenaires">Espace partenaire</a></div>
+    <div><h3>À vos côtés</h3><a href="#restaurants">Mes commandes</a><a href="#restaurants">Mes bonnes adresses</a><a href="#aide">Aide &amp; questions</a><a href="#partenaires">Espace partenaire</a><a href="/pro/courier.html">Devenir livreur</a></div>
     <div><h3>Un petit creux ?</h3><p>Votre prochain bon repas<br />n’est jamais bien loin.</p><a href="#installation" class="button button-red footer-button">Installer l’application <span aria-hidden="true">⇩</span></a><small>Sans compte pour commander.<br />Paiements simulés dans cette version.</small></div>
   </div><div class="wrap footer-bottom"><span>© 2026 TonMenu. Votre repas préféré, en quelques clics.</span><span>Orange Money · MTN MoMo · Moov Money</span></div></footer>`);
 

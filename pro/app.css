@@ -17,3 +17,6 @@
 @media(max-width:760px){.location-prompt{align-items:flex-start;flex-wrap:wrap}.location-prompt>span{margin-top:2px}.location-prompt .button{margin-left:43px}}
 .pro-dialog .order-detail{position:static;width:100%;max-width:100%}.pro-dialog .order-detail>.panel-head{padding:10px 0}.pro-dialog .order-detail>.panel-body{padding:10px 0 0}
 .auth-gate{max-width:520px;margin:8vh auto;padding:28px;background:#fff;border:1px solid #EAECED;border-radius:14px;box-shadow:var(--shadow)}.auth-gate h1{font-size:24px;margin:0 0 8px}.auth-gate>p:not(.eyebrow){font-size:13px;color:var(--muted);line-height:1.55}.auth-form{display:grid;gap:13px;margin-top:20px}.auth-form .form-row span{font-size:12px;font-weight:700}.auth-form input{min-height:42px;border:1px solid #DDE1DD;border-radius:8px;padding:8px 10px;font:inherit}.auth-signup{margin-top:16px;font-size:12px;color:var(--muted)}
+/* Financial tables and actions remain legible on partner devices. */
+.finance-summary small,.finance-summary .badge,.data-table th,.data-table td,.data-table td small,.data-table .button-small,.finance-view .notice{font-size:13px!important}
+.data-table .button-small{min-height:44px;padding-inline:12px}

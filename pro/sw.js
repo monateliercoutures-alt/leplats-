@@ -1,4 +1,4 @@
-const CACHE = 'tonmenu-pro-shell-v4';
+const CACHE = 'tonmenu-pro-shell-v5';
 const ROOT = new URL('./', self.location.href);
 const rootPath = ROOT.pathname;
 const atRoot = path => new URL(path, ROOT).href;
@@ -6,7 +6,12 @@ const SHELL = [
   ROOT.href,
   atRoot('index.html'),
   atRoot('app.css?v=4'),
-  atRoot('app.js?v=4'),
+  atRoot('app.js?v=5'),
+  atRoot('courier.html'),
+  atRoot('courier.css?v=1'),
+  atRoot('courier.js?v=1'),
+  new URL('../shared/finance-core.js?v=1', ROOT).href,
+  new URL('../shared/finance-store.js?v=1', ROOT).href,
   atRoot('site.webmanifest'),
   atRoot('api-config.js?v=1')
 ];

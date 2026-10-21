@@ -30,3 +30,6 @@ html[data-device-mode="app"] .desktop-nav-wrap{display:none}html[data-device-mod
 @media(max-width:760px){.restaurant-summary-main{align-items:flex-start;gap:11px}.restaurant-logo{width:58px;height:58px;border-radius:13px}.restaurant-summary-copy{flex:1}.restaurant-summary h1{font-size:23px}}
 .busy-badge{position:absolute;left:10px;bottom:10px;padding:5px 8px;border-radius:6px;background:#262826d9;color:white;font-size:12px;font-weight:800}
 .restaurant-details-links{display:flex;gap:8px;margin-top:10px}.restaurant-details-links a{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:white;font-size:13px;font-weight:700}.restaurant-details-links a:last-child{color:var(--green)}.restaurant-details-links .icon{width:16px}
+.courier-apply-link{display:flex;align-items:center;gap:9px;margin:14px 0;padding:13px 15px;border-radius:11px;background:#EAF7EE;color:#17763B;font-weight:800;font-size:13px}.courier-apply-link .icon{width:18px}
+.manual-payment-note p,.manual-payment-panel>p,.manual-payment-panel small,.manual-payment-panel .form-label,.reported-reference,.track-panel .alert{font-size:13px!important;line-height:1.5}
+.manual-payment-panel input,.manual-payment-panel button{min-height:44px}
