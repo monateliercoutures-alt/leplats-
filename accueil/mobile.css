@@ -33,3 +33,13 @@ html[data-device-mode="app"] .desktop-nav-wrap{display:none}html[data-device-mod
 .courier-apply-link{display:flex;align-items:center;gap:9px;margin:14px 0;padding:13px 15px;border-radius:11px;background:#EAF7EE;color:#17763B;font-weight:800;font-size:13px}.courier-apply-link .icon{width:18px}
 .manual-payment-note p,.manual-payment-panel>p,.manual-payment-panel small,.manual-payment-panel .form-label,.reported-reference,.track-panel .alert{font-size:13px!important;line-height:1.5}
 .manual-payment-panel input,.manual-payment-panel button{min-height:44px}
+.location-opt-in{display:grid;grid-template-columns:42px minmax(0,1fr) auto;align-items:center;gap:13px;margin:0 0 21px;padding:14px 16px;border:1px solid #dce9dc;border-radius:13px;background:#f3faf4}
+.location-opt-in-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:#e1f1e3;color:var(--green)}
+.location-opt-in-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.location-opt-in-copy b{font-size:14px}
+.location-opt-in-copy small{color:var(--muted);font-size:12px;line-height:1.4}
+.location-opt-in-actions{display:flex;align-items:center;gap:8px}
+.location-opt-in-actions .btn{min-height:42px;padding:0 13px;white-space:nowrap}
+.restaurant-distance{font-size:11px;color:var(--muted);white-space:nowrap}
+.location-consent-modal>.text-link{margin-top:13px}
+@media(max-width:760px){.location-opt-in{grid-template-columns:36px minmax(0,1fr);gap:10px;margin-bottom:17px;padding:12px}.location-opt-in-icon{width:35px;height:35px}.location-opt-in-copy b{font-size:13px}.location-opt-in-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:7px}.location-opt-in-actions .btn{min-height:44px;padding:0 8px;font-size:12px;white-space:normal}.restaurant-distance{font-size:10px}}

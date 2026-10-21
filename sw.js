@@ -1,8 +1,8 @@
-const CACHE_NAME = 'tonmenu-static-v4';
+const CACHE_NAME = 'tonmenu-static-v7';
 const SHELL = [
   '/accueil/',
-  '/accueil/mobile.css?v=5',
-  '/accueil/mobile.js?v=6',
+  '/accueil/mobile.css?v=6',
+  '/accueil/mobile.js?v=9',
   '/shared/finance-core.js?v=1',
   '/shared/finance-store.js?v=1',
   '/pro/courier.html',
