@@ -1,8 +1,9 @@
-const CACHE_NAME = 'tonmenu-static-v2';
+const CACHE_NAME = 'tonmenu-static-v3';
 const SHELL = [
   '/accueil/',
-  '/accueil/mobile.css?v=2',
-  '/accueil/mobile.js',
+  '/accueil/mobile.css?v=5',
+  '/accueil/mobile.js?v=5',
+  '/api-config.js?v=1',
   '/site.webmanifest',
   '/images/logo-header.png',
   '/images/tonmenu-favicon.png',

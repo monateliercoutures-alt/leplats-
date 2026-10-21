@@ -4,7 +4,7 @@ Les trois projets utilisent le même dépôt et la branche Preview `arena/7a8970
 
 ## 1. TonMenu Client (projet Vercel existant)
 
-Dans **Settings → Build and Deployment** : framework `Other`, Build Command `bash scripts/build-client.sh`, Output Directory `client-dist`. Ce build copie uniquement les fichiers Client (`index.html`, `app.js`, `styles.css`, `accueil/`, `images/`) ; il ne publie donc ni `pro/` ni `backend/`.
+Dans **Settings → Build and Deployment** : framework `Other`, Build Command `bash scripts/build-client.sh`, Output Directory `client-dist`. Ce build copie uniquement les fichiers Client (`index.html`, `app.js`, `styles.css`, `accueil/`, `images/`, `vercel.json`) ; il ne publie donc ni `pro/` ni `backend/`. `vercel.json` renvoie les routes profondes de la SPA vers `/accueil/index.html`, tout en laissant la vitrine `/` et les ressources statiques intactes.
 
 ## 2. TonMenu Pro (nouveau projet Vercel)
 
