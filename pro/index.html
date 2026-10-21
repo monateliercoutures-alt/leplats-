@@ -6,17 +6,17 @@
   <meta name="theme-color" content="#262826" />
   <meta name="description" content="TonMenu Pro — gérez votre restaurant, vos commandes et vos paiements à Abidjan." />
   <title>TonMenu Pro — Espace partenaire</title>
-  <link rel="icon" href="/images/tonmenu-favicon.png" type="image/png" sizes="32x32" />
-  <link rel="manifest" href="/pro/site.webmanifest" />
+  <link rel="icon" href="media/tonmenu-favicon.png" type="image/png" sizes="32x32" />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="/pro/app.css?v=2" />
+  <link rel="stylesheet" href="app.css?v=4" />
 </head>
 <body>
   <div class="pro-shell">
     <aside class="sidebar" id="sidebar">
-      <a class="pro-brand" href="/pro/" aria-label="TonMenu Pro, accueil">
-        <img src="/images/logo-header.png" alt="TonMenu" width="157" height="30" />
+      <a class="pro-brand" href="./" aria-label="TonMenu Pro, accueil">
+        <img src="media/logo-header.png" alt="TonMenu" width="157" height="30" />
         <span class="pro-chip">PRO</span>
       </a>
       <label class="restaurant-picker"><span>ÉTABLISSEMENT</span><select id="restaurantSelect" aria-label="Choisir un établissement"><option>Chez Aya — Niangon</option><option>Le Maquis du Marché — Siporex</option></select></label>
@@ -68,6 +68,7 @@
   <div class="scrim" id="scrim"></div>
   <dialog class="pro-dialog" id="dialog" aria-labelledby="dialogTitle"><div class="dialog-body" id="dialogBody"></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="/pro/app.js?v=2" defer></script>
+  <script src="api-config.js?v=1" defer></script>
+  <script src="app.js?v=4" defer></script>
 </body>
 </html>

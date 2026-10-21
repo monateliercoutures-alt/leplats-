@@ -1,4 +1,6 @@
 const asset = (name) => `/images/${name}`;
+const escapeHtml = (value = '') => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+const validAsset = (value, fallback = 'story-meal.webp') => /^[a-z0-9-]+\.(?:webp|png)$/i.test(String(value || '')) ? String(value) : fallback;
 
 const categories = [
   { slug: 'maquis', title: 'Maquis', image: 'plats-sauce.webp', alt: 'Kédjénou traditionnel en sauce', description: 'Restaurants ivoiriens traditionnels, souvent en plein air : kedjenou, sauce feuille, sauce graine.' },
@@ -13,7 +15,7 @@ const categories = [
   { slug: 'patisserie', title: 'Pâtisserie / Snacks / Café', image: 'patisserie.webp', alt: 'Croissants, pâtisserie aux fruits et café', description: 'Viennoiseries, gâteaux, snacks et boissons chaudes pour toutes les pauses.' },
 ];
 
-const restaurantRecords = [];
+let restaurantRecords = [];
 
 const flavors = [
   ['Plats en sauce', 'plats-sauce.webp', 'Plat ivoirien généreux en sauce'],
@@ -87,10 +89,10 @@ component('promo-banners', () => `
     <a class="category-card category-red reveal" href="#saveurs"><div class="category-copy"><small>LES CLASSIQUES QU’ON AIME</small><h3>Nos plats en sauce.<br />Du goût à partager.</h3><span class="text-link">Explorer ↗</span></div><img src="${asset('plats-sauce.webp')}" alt="Plat en sauce" loading="lazy" width="240" height="250" /></a>
   </div></section>`);
 
-component('restaurant-grid', () => {
+function renderRestaurantGrid() {
   const count = restaurantRecords.length;
   const listings = count ? `<div class="restaurant-card-grid">${restaurantRecords.map((restaurant) => `
-    <article class="restaurant-card" data-category="${restaurant.category}" data-rating="${restaurant.ratingValue}" data-eta="${restaurant.eta}" data-free="${restaurant.freeDelivery ? '1' : '0'}"><img src="${asset(restaurant.image)}" alt="${restaurant.name}" loading="lazy" /><div><h3>${restaurant.name}</h3><p>${restaurant.cuisine}</p><div class="restaurant-meta"><span>★ ${restaurant.rating}</span><span>${restaurant.eta} min</span><span>${restaurant.fee}</span></div></div></article>`).join('')}</div>` : `
+    <article class="restaurant-card" data-category="${escapeHtml(restaurant.category)}" data-rating="${Number(restaurant.ratingValue)||0}" data-eta="${Number(restaurant.eta)||0}" data-free="${restaurant.freeDelivery ? '1' : '0'}"><img src="${asset(validAsset(restaurant.image))}" alt="${escapeHtml(restaurant.name)}" loading="lazy" /><div><h3>${escapeHtml(restaurant.name)}</h3><p>${escapeHtml(restaurant.cuisine)}</p><div class="restaurant-meta"><span>★ ${escapeHtml(restaurant.rating)}</span><span>${Number(restaurant.eta)||0} min</span><span>${escapeHtml(restaurant.fee)}</span></div></div></article>`).join('')}</div>` : `
     <article class="empty-state" id="emptyState"><div class="empty-art"><img src="${asset('plats-sauce.webp')}" alt="Plat en sauce préparé localement" width="320" height="240" loading="lazy" /><span class="empty-sticker">BIENTÔT<br />À TABLE !</span></div>
       <div class="empty-copy"><p class="eyebrow">LES PREMIERS PARTENAIRES ARRIVENT</p><h3>Le quartier se met à table.</h3>
         <p id="emptyMessage">Nous préparons les premières bonnes adresses de Yopougon. Vous avez un restaurant ? Faites découvrir votre cuisine.</p>
@@ -104,7 +106,8 @@ component('restaurant-grid', () => {
       <label class="sort-control"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 4v4m8 2v4m-8 2v4"></path></svg><select aria-label="Trier les restaurants"><option>Recommandés</option><option>Mieux notés</option><option>Plus rapides</option><option>Livraison gratuite</option></select></label>
     </div>${listings}
   </div></section>`;
-});
+}
+component('restaurant-grid', renderRestaurantGrid);
 
 component('flavor-grid', () => `
   <section class="flavours section" id="saveurs"><div class="wrap">
@@ -177,7 +180,6 @@ function notify(message) {
   toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
 }
 
-const emptyMessage = document.querySelector('#emptyMessage');
 let selectedCategory = 'all';
 function selectCategory(slug, label) {
   selectedCategory = slug;
@@ -188,6 +190,7 @@ function selectCategory(slug, label) {
   });
   const all = slug === 'all';
   document.querySelectorAll('.restaurant-card').forEach((card) => { card.hidden = !all && card.dataset.category !== slug; });
+  const emptyMessage = document.querySelector('#emptyMessage');
   if (emptyMessage) emptyMessage.textContent = all
     ? 'Nous préparons les premières bonnes adresses de Yopougon. Vous avez un restaurant ? Faites découvrir votre cuisine.'
     : `Nous préparons les premières bonnes adresses pour ${label}. Vous avez un restaurant ? Faites découvrir votre cuisine.`;
@@ -248,3 +251,41 @@ const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserv
 document.querySelectorAll('.reveal').forEach((element) => revealObserver ? revealObserver.observe(element) : element.classList.add('is-visible'));
 
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+
+async function loadSharedRestaurants() {
+  const apiBase = String(window.TONMENU_API_BASE_URL || '').replace(/\/+$/, '');
+  if (!apiBase) return;
+  try {
+    const response = await fetch(`${apiBase}/api/restaurants`, { headers: { Accept: 'application/json' } });
+    if (!response.ok) throw new Error(`API ${response.status}`);
+    const payload = await response.json();
+    const allowedCategories = new Set(categories.map((item) => item.slug));
+    restaurantRecords = (Array.isArray(payload.restaurants) ? payload.restaurants : []).map((r) => ({
+      id: String(r.id || ''), name: String(r.name || ''), cuisine: String(r.cuisine || 'Cuisine locale'),
+      category: allowedCategories.has(r.category) ? r.category : 'maquis', image: validAsset(r.image),
+      ratingValue: Number(r.rating) || 0, rating: Number(r.rating) ? Number(r.rating).toFixed(1) : 'Nouveau',
+      eta: Number(r.eta) || 25, fee: `${Number(r.delivery_fee) || 0} F`, freeDelivery: Boolean(r.free_delivery),
+    }));
+    const grid = document.querySelector('restaurant-grid');
+    if (grid) {
+      grid.innerHTML = renderRestaurantGrid();
+      grid.querySelector('.restaurants-filter')?.addEventListener('click', () => selectCategory('all', ''));
+      grid.querySelector('.sort-control select')?.addEventListener('change', (event) => {
+        const list = grid.querySelector('.restaurant-card-grid'); if (!list) return;
+        const cards = [...list.children], mode = event.currentTarget.value;
+        cards.sort((a,b) => mode === 'Mieux notés' ? Number(b.dataset.rating)-Number(a.dataset.rating) : mode === 'Plus rapides' ? Number(a.dataset.eta)-Number(b.dataset.eta) : mode === 'Livraison gratuite' ? Number(b.dataset.free)-Number(a.dataset.free) : 0);
+        cards.forEach(card => list.append(card));
+      });
+    }
+    const total = restaurantRecords.length;
+    document.querySelectorAll('.pill-count,.count-muted').forEach((el) => { el.textContent = String(total); });
+    document.querySelectorAll('.category-tile').forEach((tile) => {
+      const available = restaurantRecords.filter((r) => r.category === tile.dataset.category).length;
+      const status = tile.querySelector('.category-status');
+      if (status) status.textContent = available ? `${available} restaurant${available > 1 ? 's' : ''}` : 'Bientôt';
+    });
+  } catch (error) {
+    console.warn('TonMenu API indisponible ; le contenu local reste affiché.', error);
+  }
+}
+window.addEventListener('load', loadSharedRestaurants, { once: true });
