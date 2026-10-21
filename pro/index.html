@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#262826" />
+  <meta name="description" content="TonMenu Pro — gérez votre restaurant, vos commandes et vos paiements à Abidjan." />
+  <title>TonMenu Pro — Espace partenaire</title>
+  <link rel="icon" href="/images/tonmenu-favicon.png" type="image/png" sizes="32x32" />
+  <link rel="manifest" href="/pro/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/pro/app.css?v=2" />
+</head>
+<body>
+  <div class="pro-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="pro-brand" href="/pro/" aria-label="TonMenu Pro, accueil">
+        <img src="/images/logo-header.png" alt="TonMenu" width="157" height="30" />
+        <span class="pro-chip">PRO</span>
+      </a>
+      <label class="restaurant-picker"><span>ÉTABLISSEMENT</span><select id="restaurantSelect" aria-label="Choisir un établissement"><option>Chez Aya — Niangon</option><option>Le Maquis du Marché — Siporex</option></select></label>
+      <nav class="side-nav" aria-label="Navigation partenaire">
+        <span class="nav-caption">GESTION</span>
+        <button class="nav-link active" data-view="home"><span class="nav-icon" data-icon="home"></span>Accueil</button>
+        <button class="nav-link" data-view="orders"><span class="nav-icon" data-icon="orders"></span>Commandes <span class="nav-badge" id="newOrdersBadge">2</span></button>
+        <button class="nav-link" data-view="menu"><span class="nav-icon" data-icon="menu"></span>Menu</button>
+        <button class="nav-link" data-view="availability"><span class="nav-icon" data-icon="clock"></span>Disponibilité</button>
+        <button class="nav-link" data-view="promotions"><span class="nav-icon" data-icon="tag"></span>Promotions</button>
+        <span class="nav-caption nav-caption-spaced">PILOTAGE</span>
+        <button class="nav-link" data-view="performance"><span class="nav-icon" data-icon="chart"></span>Performances</button>
+        <button class="nav-link" data-view="finances"><span class="nav-icon" data-icon="wallet"></span>Finances <span class="nav-badge" id="financeBadge">2</span></button>
+        <button class="nav-link" data-view="reviews"><span class="nav-icon" data-icon="star"></span>Avis</button>
+        <button class="nav-link" data-view="restaurant"><span class="nav-icon" data-icon="store"></span>Mon restaurant</button>
+        <button class="nav-link" data-view="team"><span class="nav-icon" data-icon="team"></span>Équipe</button>
+        <button class="nav-link" data-view="help"><span class="nav-icon" data-icon="help"></span>Aide</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-connection"><span class="connection-dot"></span><span id="sidebarConnection">Connecté · Mode démo</span></div>
+        <button class="courier-link" data-action="courier"><span class="nav-icon" data-icon="bike"></span>Devenir livreur <span aria-hidden="true">↗</span></button>
+        <div class="side-user"><span class="avatar">AA</span><span><b>Aminata A.</b><small>Propriétaire</small></span><button class="icon-only" aria-label="Options du profil" data-action="profile-menu"><span data-icon="more"></span></button></div>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <button class="mobile-menu-btn icon-only" id="mobileMenu" aria-label="Ouvrir le menu"><span data-icon="menu"></span></button>
+        <div class="breadcrumb"><span>Espace partenaire</span><span class="crumb-sep">/</span><b id="breadcrumbTitle">Accueil</b></div>
+        <div class="topbar-actions">
+          <span class="online-indicator" id="onlineIndicator"><i></i><span>Connecté</span></span>
+          <button class="status-toggle is-open" id="statusToggle" aria-label="Statut du restaurant : ouvert"><span class="status-light"></span><span id="statusLabel">Ouvert</span><span class="toggle-caret" aria-hidden="true">⌄</span></button>
+          <button class="icon-only notification-button" id="notificationButton" aria-label="Notifications"><span data-icon="bell"></span><i class="notification-dot"></i></button>
+          <button class="top-profile" data-action="profile-menu"><span class="avatar">AA</span><span class="profile-name">Aminata A.</span><span class="toggle-caret">⌄</span></button>
+        </div>
+      </header>
+
+      <main class="page-content" id="pageContent" tabindex="-1"></main>
+    </div>
+
+    <nav class="mobile-bottom-nav" aria-label="Navigation rapide">
+      <button class="active" data-view="home"><span data-icon="home"></span>Accueil</button>
+      <button data-view="orders"><span data-icon="orders"></span>Commandes<i id="mobileOrdersBadge">2</i></button>
+      <button data-view="menu"><span data-icon="menu"></span>Menu</button>
+      <button data-action="more-menu"><span data-icon="more"></span>Plus</button>
+    </nav>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <dialog class="pro-dialog" id="dialog" aria-labelledby="dialogTitle"><div class="dialog-body" id="dialogBody"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/pro/app.js?v=2" defer></script>
+</body>
+</html>
