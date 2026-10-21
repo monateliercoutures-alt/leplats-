@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#EC3D2E" />
+  <meta name="description" content="Les meilleurs restaurants de Yopougon, livrés chez vous. Commandez local avec TonMenu." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TonMenu — Le goût du quartier." />
+  <meta property="og:description" content="Les meilleurs restaurants de Yopougon, livrés chez vous. Commandez local avec TonMenu." />
+  <meta property="og:image" content="/images/hero-exact.webp" />
+  <meta property="og:image:alt" content="Le vrai goût de chez nous : poulet braisé, riz et alloco avec TonMenu." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TonMenu — Le goût du quartier." />
+  <meta name="twitter:description" content="Les meilleurs restaurants de Yopougon, livrés chez vous. Commandez local avec TonMenu." />
+  <meta name="twitter:image" content="/images/hero-exact.webp" />
+  <title>TonMenu — Le goût du quartier.</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/tonmenu-favicon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/styles.css?v=14" />
+  <script>
+    (() => {
+      const isAppRoute = location.pathname === '/accueil' || location.pathname.startsWith('/accueil/');
+      const isTouch = navigator.maxTouchPoints > 0 || matchMedia('(pointer: coarse)').matches;
+      const isStandalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+      const isNarrow = matchMedia('(max-width: 1023px)').matches;
+      if (!isAppRoute && (isNarrow || isTouch || isStandalone)) location.replace('/accueil');
+    })();
+  </script>
+</head>
+<body class="desktop-home">
+  <top-info-bar></top-info-bar>
+  <div class="sticky-chrome">
+    <site-header></site-header>
+    <main-nav></main-nav>
+  </div>
+  <main id="contenu">
+    <hero-banner></hero-banner>
+    <cuisine-grid></cuisine-grid>
+    <promo-banners></promo-banners>
+    <restaurant-grid></restaurant-grid>
+    <flavor-grid></flavor-grid>
+    <marquee-band></marquee-band>
+    <brand-story></brand-story>
+    <benefits-row></benefits-row>
+    <install-band></install-band>
+    <partner-cta></partner-cta>
+    <photo-strip></photo-strip>
+  </main>
+  <site-footer></site-footer>
+  <dialog class="modal" id="addressModal" aria-labelledby="addressTitle">
+    <form method="dialog" class="modal-card" id="addressForm">
+      <button class="modal-close" aria-label="Fermer">×</button><span class="modal-pin" aria-hidden="true">⌖</span>
+      <p class="eyebrow">ON LIVRE DANS VOTRE QUARTIER</p><h2 id="addressTitle">Où souhaitez-vous être livré ?</h2>
+      <label for="addressInput">Votre adresse à Abidjan</label><input id="addressInput" placeholder="Ex. Yopougon, Niangon…" required />
+      <button class="button button-red" value="save">Confirmer mon adresse</button>
+    </form>
+  </dialog>
+  <dialog class="modal" id="accountModal" aria-labelledby="accountTitle"><form method="dialog" class="modal-card"><button class="modal-close" aria-label="Fermer">×</button><span class="modal-pin" aria-hidden="true">♙</span><p class="eyebrow">VOTRE COMPTE TONMENU</p><h2 id="accountTitle">Heureux de vous retrouver.</h2><p class="modal-copy">Connectez-vous bientôt pour suivre vos commandes et retrouver vos adresses favorites.</p><button class="button button-red" value="close">Continuer la découverte</button></form></dialog>
+  <dialog class="modal" id="cartModal" aria-labelledby="cartTitle"><form method="dialog" class="modal-card"><button class="modal-close" aria-label="Fermer">×</button><span class="modal-pin" aria-hidden="true">♧</span><p class="eyebrow">VOTRE PANIER</p><h2 id="cartTitle">Votre panier est encore vide.</h2><p class="modal-copy">Les bons petits plats vous attendent. Choisissez une cuisine pour commencer.</p><button class="button button-red" value="close">Découvrir les cuisines</button></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/api-config.js?v=1" defer></script>
+  <script src="/app.js?v=13" defer></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "TonMenu — Le goût du quartier",
+  "short_name": "TonMenu",
+  "description": "Les meilleurs restaurants de Yopougon, livrés chez vous.",
+  "lang": "fr-CI",
+  "start_url": "/accueil",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F8F4EE",
+  "theme_color": "#EC3D2E",
+  "icons": [
+    { "src": "/images/tonmenu-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/images/tonmenu-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

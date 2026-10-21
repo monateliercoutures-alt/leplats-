@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    { "source": "/accueil", "destination": "/accueil/index.html" },
+    { "source": "/accueil/", "destination": "/accueil/index.html" },
+    { "source": "/explorer", "destination": "/accueil/index.html" },
+    { "source": "/restaurants", "destination": "/accueil/index.html" },
+    { "source": "/restaurant/:id", "destination": "/accueil/index.html" },
+    { "source": "/panier", "destination": "/accueil/index.html" },
+    { "source": "/paiement", "destination": "/accueil/index.html" },
+    { "source": "/commandes", "destination": "/accueil/index.html" },
+    { "source": "/commandes/:id", "destination": "/accueil/index.html" },
+    { "source": "/compte", "destination": "/accueil/index.html" },
+    { "source": "/compte/:path*", "destination": "/accueil/index.html" },
+    { "source": "/promotions", "destination": "/accueil/index.html" }
+  ]
+}
